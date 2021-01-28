@@ -30,6 +30,7 @@ df = pd.concat([df_dev, df_eval], sort=False)
 # print(df_dev.isna().any())
 # print(df.columns)
 df_1h = pd.get_dummies(df,columns=['designation', 'province', 'region_1', 'region_2','variety', 'winery'])
+train_valid_mask = ~df_1h["quality"].isna()
 
 
 
